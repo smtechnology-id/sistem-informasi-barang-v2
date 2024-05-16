@@ -1,0 +1,10 @@
+kak maaf ini listnya ada tambahan dikitt, makasih banyak ya kakk
+- penambahan logo di halaman log in 
+-Done -  penambahan field nomor register di data barang semuanya (antara nama barang dan merek/tipe)
+-Done -  di data barang tidak usah ada fitur print (hanya search, edit, delete)
+- data inventaris barang dan inventaris ruangan bisa filter data semua field, fitur search, dan export excel pdf word
+- export inventaris barang judul di atasnya KARTU INVENTARIS BARANG (KIB) B
+- export inventaris barang judul di atasnya KARTU INVENTARIS RUANGAN (KIR)
+-Done - penambahan field jex	nis barang di data inventaris ruangan (antara nama barang dan spesifikasi)
+- menu laporan di export saja tidak usah langsung di print
+- export laporan judul di atasnya BUKU INVENTARIS
