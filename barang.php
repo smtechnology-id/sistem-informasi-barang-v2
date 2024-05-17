@@ -71,10 +71,15 @@ require 'function.php';
                             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#filter">
                                 Filter
                             </button>
-                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#export">
-                                Export
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exportexcel">
+                                Excel
                             </button>
-                            <a href="javascript:window.print()" class="btn btn-outline-info"><i class="ri-printer-line"></i> Print</a>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exportpdf">
+                                PDF
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exportword">
+                                Word
+                            </button>
 
 
                         </div>
@@ -230,13 +235,54 @@ require 'function.php';
     <script src="assets/demo/datatables-demo.js"></script>
 </body>
 <!-- The Modal -->
-<div class="modal fade" id="export">
+<div class="modal fade" id="exportpdf">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Export Data</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <form method="post" action="exportbarangpdf.php">
+                <div class="modal-body">
+                    <input type="text" name="kodebarang" placeholder="Kode Barang" class="form-control">
+                    <br>
+                    <input type="text" name="namainvenbarang" placeholder="Nama Barang" class="form-control">
+                    <br>
+                    <input type="text" name="nomorregister" placeholder="Nomor Register" class="form-control">
+                    <br>
+                    <input type="text" name="kondisibarang" placeholder="Kondisi" class="form-control">
+                    <br>
+                    <input type="text" name="merkbarang" placeholder="Merk" class="form-control">
+                    <br>
+                    <input type="text" name="ukuranbarang" placeholder="Ukuran" class="form-control">
+                    <br>
+                    <input type="text" name="bahanbarang" placeholder="Bahan" class="form-control">
+                    <br>
+                    <input type="text" name="tahunperolehanbarang" placeholder="Tahun Perolehan" class="form-control">
+                    <br>
+                    <input type="text" name="asalusulbarang" placeholder="Asal Usul" class="form-control">
+                    <br>
+                    <input type="text" name="hargabarang" placeholder="Harga" class="form-control">
+                    <br>
+                    <input type="text" name="keteranganbarang" placeholder="Keterangan" class="form-control">
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="export">PDF</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exportword">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Filter Data</h4>
+                <h4 class="modal-title">Export Data</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -265,7 +311,48 @@ require 'function.php';
                     <br>
                     <input type="text" name="keteranganbarang" placeholder="Keterangan" class="form-control">
                     <br>
-                    <button type="submit" class="btn btn-primary" name="filterbarang">PDF</button>
+                    <button type="submit" class="btn btn-primary" name="exportword">Word</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exportexcel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Export Data</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <form method="post" action="exportbarang.php">
+                <div class="modal-body">
+                    <input type="text" name="kodebarang" placeholder="Kode Barang" class="form-control">
+                    <br>
+                    <input type="text" name="namainvenbarang" placeholder="Nama Barang" class="form-control">
+                    <br>
+                    <input type="text" name="nomorregister" placeholder="Nomor Register" class="form-control">
+                    <br>
+                    <input type="text" name="kondisibarang" placeholder="Kondisi" class="form-control">
+                    <br>
+                    <input type="text" name="merkbarang" placeholder="Merk" class="form-control">
+                    <br>
+                    <input type="text" name="ukuranbarang" placeholder="Ukuran" class="form-control">
+                    <br>
+                    <input type="text" name="bahanbarang" placeholder="Bahan" class="form-control">
+                    <br>
+                    <input type="text" name="tahunperolehanbarang" placeholder="Tahun Perolehan" class="form-control">
+                    <br>
+                    <input type="text" name="asalusulbarang" placeholder="Asal Usul" class="form-control">
+                    <br>
+                    <input type="text" name="hargabarang" placeholder="Harga" class="form-control">
+                    <br>
+                    <input type="text" name="keteranganbarang" placeholder="Keterangan" class="form-control">
+                    <br>
                     <button type="submit" class="btn btn-primary" name="filterbarang">EXCEL</button>
                 </div>
             </form>
@@ -279,7 +366,7 @@ require 'function.php';
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Export Data</h4>
+                <h4 class="modal-title">Filter Data</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -308,9 +395,7 @@ require 'function.php';
                     <br>
                     <input type="text" name="keteranganbarang" placeholder="Keterangan" class="form-control">
                     <br>
-                    <button type="submit" class="btn btn-light" name="filterbarang">PDF</button>
-                    <button type="submit" class="btn btn-light" name="filterbarang">Word</button>
-                    <button type="submit" class="btn btn-light" name="filterbarang">EXCEL</button>
+                    <button type="submit" class="btn btn-light" name="filterbarang">Filter</button>
                 </div>
             </form>
 

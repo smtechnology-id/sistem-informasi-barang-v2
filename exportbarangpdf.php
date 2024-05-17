@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-if (isset($_POST['exportword'])) {
-    header("Content-type: application/vnd.ms-word");
-    header("Content-Disposition: attachment;Filename=Absen.doc");
-} else {
-    header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=Inventaris Barang.xls");
-}
-
-?>
 
 <head>
     <meta charset="utf-8" />
@@ -17,10 +7,11 @@ if (isset($_POST['exportword'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Inventaris Barang</title>
+    <title>Data Barang</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 </head>
 
 
@@ -33,10 +24,13 @@ if (isset($_POST['exportword'])) {
                     <div class="container">
                         <div class="col-md-12">
                             <div class="text-center">
-                                <p class="pt-0">KARTU INVENTARIS BARANG (KIB) B</p>
+                                <h2 class="pt-0">KARTU INVENTARIS BARANG (KIB) B</h2>
+                                <p>SISTEM INFORMASI INVENTARISASI BMD
+                                </p>
                             </div>
 
                         </div>
+                        <a href="javascript:window.print()" class="btn btn-outline-info"><i class="bi bi-printer"></i><i class="ri-printer-line"></i> Print</a>
 
                         <div class="row my-2 mx-1 justify-content-center">
                             <table class="table table-striped table-borderless">
@@ -60,7 +54,7 @@ if (isset($_POST['exportword'])) {
 
                                     <?php
                                     require 'function.php';
-                                    if (isset($_POST['filterbarang'])) {
+                                    if (isset($_POST['export'])) {
                                         // Ambil dan sanitasi data dari formulir
                                         $kodebarang = isset($_POST['kodebarang']) ? mysqli_real_escape_string($conn, $_POST['kodebarang']) : '';
                                         $namainvenbarang = isset($_POST['namainvenbarang']) ? mysqli_real_escape_string($conn, $_POST['namainvenbarang']) : '';

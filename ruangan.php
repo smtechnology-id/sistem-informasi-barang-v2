@@ -112,6 +112,9 @@ require 'function.php';
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                 Tambah Data
                             </button>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#filter">
+                                Filter
+                            </button>
 
                         </div>
                         <div class="card-body">
@@ -278,6 +281,54 @@ require 'function.php';
                     <input type="text" name="unitkerja" placeholder="Unit Kerja" class="form-control" required>
                     <br>
                     <button type="submit" class="btn btn-primary" name="dataruangan">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="filter">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Filter Data</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <form method="post">
+                <div class="modal-body">
+                    <input type="text" name="namaruangan" placeholder="Nama Ruangan" class="form-control" required>
+                    <br>
+                    <input type="text" name="koderuangan" placeholder="Kode Ruangan" class="form-control" required>
+                    <br>
+                    <input type="text" name="namabarangruangan" placeholder="Nama Barang" class="form-control" required>
+                    <br>
+                    <input type="text" name="jenisbarang" placeholder="Nama Barang" class="form-control" required>
+                    <br>
+                    <input type="text" name="spesifikasi" placeholder="Spesifikasi" class="form-control" required>
+                    <br>
+                    <input type="text" name="aspeklegalruangan" placeholder="Aspek Legal Aset" class="form-control" required>
+                    <br>
+                    <input type="text" name="ukuranruangan" placeholder="Ukuran" class="form-control" required>
+                    <br>
+                    <input type="text" name="bahanruangan" placeholder="Bahan" class="form-control" required>
+                    <br>
+                    <input type="text" name="tahunperolehanruangan" placeholder="Tahun Perolehan" class="form-control" required>
+                    <br>
+                    <input type="text" name="jumlahruangan" placeholder="Jumlah" class="form-control" required>
+                    <br>
+                    <input type="text" name="hargaperolehanruangan" placeholder="Harga Perolehan" class="form-control" required>
+                    <br>
+                    <input type="text" name="kondisiruangan" placeholder="Kondisi" class="form-control" required>
+                    <br>
+                    <input type="text" name="penggunabarang" placeholder="Pengguna Barang" class="form-control" required>
+                    <br>
+                    <input type="text" name="unitkerja" placeholder="Unit Kerja" class="form-control" required>
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="filter">Submit</button>
                 </div>
             </form>
 
